@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Setup Page
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-loading [isOpen]="isLoading"
+             [backdropDismiss] = "false"
+             [keyboardClose] = "false"
+             message="Loading..."
+             spinner="circles"></ion-loading>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Setup</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <p>
+      Hello, welcome to participate in the experiment.
+      <br>
+      Please enter your name and click the button below to start the experiment.
+    </p>
+
+    <div class="username-block">
+      <ion-input label="Name"
+                 placeholder="Enter your name"
+                 [value]="name"
+                 (ionInput)="onInput($event)"
+      ></ion-input>
+    </div>
+
+    <ion-alert
+      [isOpen]="isAlertOpen"
+      header="You're all set!"
+      message="You has been registered."
+      [buttons]="alertButtons"
+      (didDismiss)="exitSetup()"
+    ></ion-alert>
+    <ion-toast [message]="toastMessage"
+               [isOpen]="isToastOpen"
+               [duration]="5000"
+               (didDismiss)="setToastOpen(false)"
+    ></ion-toast>
+
+    <ion-button expand="block" (click)="onStart()">Start</ion-button>
+  </div>
+</ion-content>

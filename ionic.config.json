@@ -1,0 +1,8 @@
+{
+  "name": "RaynaudAttack",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "b88e57c0"
+}

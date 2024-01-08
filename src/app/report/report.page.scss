@@ -1,0 +1,38 @@
+div.container{
+  padding: 15px;
+}
+
+ion-radio {
+  min-width: 8rem;
+  --border-radius: 4px;
+  --inner-border-radius: 4px;
+
+  --color: #ddd;
+  --color-checked: #6815ec;
+}
+
+ion-radio.ios::part(container) {
+  width: 20px;
+  height: 20px;
+
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+.radio-checked.ios::part(container) {
+  border-color: #6815ec;
+}
+div.report-button{
+  margin-top: 20px;
+}
+
+ion-toast{
+  &.success-toast{
+    --background: #3880ff;
+    --color: white;
+  }
+  &.error-toast{
+    --background: #e2cd44;
+    --color: black;
+  }
+}

@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Stats
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-loading [isOpen]="isLoading"
+             [backdropDismiss] = "false"
+             [keyboardClose] = "false"
+             message="Loading..."
+             spinner="circles"></ion-loading>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Stats</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <p>Hello, {{name}}</p>
+
+
+    <div class="chart-block">
+      <canvas id="canvas">{{chart}}</canvas>
+    </div>
+  </div>
+
+</ion-content>

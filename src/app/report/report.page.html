@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Report Attack
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-loading [isOpen]="isLoading"
+             [backdropDismiss] = "false"
+             [keyboardClose] = "false"
+             message="Loading..."
+             spinner="circles"></ion-loading>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Report Attack</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <p>Hello, {{name}}</p>
+
+    <p>Where does the attack occur?</p>
+    <ion-radio-group [value]="attackPosition" (ionChange)="onPositionChange($event)">
+      <ion-radio value="inside" aria-label="Custom checkbox">Inside</ion-radio>
+      <br>
+      <ion-radio value="outside" aria-label="Custom checkbox that is checked">Outside</ion-radio>
+    </ion-radio-group>
+
+    <div class="report-button">
+      <ion-button expand="block" (click)="onClickReport()">Report</ion-button>
+    </div>
+  </div>
+
+  <ion-toast [message]="toastMessage"
+             [isOpen]="isToastOpen"
+             [class]="toastClass"
+             [duration]="5000"
+             (didDismiss)="setToastOpen(false)"
+  ></ion-toast>
+</ion-content>
